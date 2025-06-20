@@ -1,9 +1,13 @@
-# About This Mac - Revision 1 - Author: Harry Xie
+# About This Mac - Revision 2 - Author: Harry Xie
 
 set modelID to do shell script "sysctl -n hw.model"
 set sn to do shell script "ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | tr -d '\"'"
 set cpuModel to do shell script "sysctl -n machdep.cpu.brand_string"
-set ram to do shell script "system_profiler SPHardwareDataType | grep \" Memory:\" | awk '{print $2}'"
+set phyCores to do shell script "sysctl -n hw.physicalcpu"
+set logCores to do shell script "sysctl -n hw.logicalcpu"
+set mem to do shell script "system_profiler SPHardwareDataType | grep \" Memory:\" | awk '{print $2}'"
+set eachMemSize to do shell script "system_profiler SPMemoryDataType | awk '/Size:/ {sizes = (sizes == \"\" ? \"\" : sizes \", \") $2$3} END {print sizes}'"
+set memMfg to do shell script "system_profiler SPMemoryDataType | grep \"Manufacturer:\" | awk '{print $2}' | xargs | sed 's/ /, /g'"
 set storage to do shell script "diskutil info disk0 | grep \"Disk Size\" | awk '{print $3$4}'"
 set gpus to do shell script "system_profiler SPDisplaysDataType | grep \"Chipset Model\" | awk -F': ' '{ if (NR == 1) {chipsets = $2} else {chipsets = chipsets \", \" $2} } END {print chipsets}'"
 set wfStdrd to do shell script "system_profiler SPAirPortDataType | awk '/PHY Mode:/ { print $3 ; exit }'"
@@ -19,7 +23,10 @@ display dialog "This is: " & modelID & return & Â
 	"Serial Number: " & sn & return & return & Â
 	"--- GENERAL INFORMATION ---" & return & Â
 	"Processor: " & cpuModel & return & Â
-	"Installed RAM: " & ram & "GB" & return & Â
+	"Number of Physical/Logical Cores: " & phyCores & "/" & logCores & return & Â
+	"Total Installed Memory: " & mem & "GB" & return & Â
+	"Each Memory Slot's Size: " & eachMemSize & return & Â
+	"Memory Manufacturer(s): " & memMfg & return & Â
 	"Storage (internal HD): " & storage & return & Â
 	"Attached GPUs: " & gpus & return & Â
 	"Wi-Fi Adapter's IEEE Standard: " & wfStdrd & return & return & Â

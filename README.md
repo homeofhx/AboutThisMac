@@ -4,14 +4,17 @@ A simple AppleScript that provides a convenient way to view key details about th
 
 ## What This AppleScript Can Get
 
-As for Revision 1, this AppleScript can get the following information about the Mac:
+As for Revision 2, this AppleScript can get the following information about the Mac:
 
 |Information|Minimum Software/Hardware Requirement*|
 |-|-|
 |Mac's model identifier (e.g. "iMac10,1", not "iMac (27-inch, Late 2009)")||
 |Mac's serial number||
 |Mac's processor model in detail (e.g. "Intel(R) Core(TM) i5-5287U @ 2.9 GHz", not just "2.9GHz dual-core Intel Core i5")||
-|Installed RAM capacity||
+|Processor's physical/logical cores||
+|Total installed memory||
+|Each memory slot's size||
+|Memory manufacturer(s)||
 |Internal storage capacity|Mac OS 10.13 or higher|
 |Attached GPUs||
 |Wi-Fi adapter' IEEE 802.11 standard (e.g. "802.11ax")|Mac OS 10.9 or higher|
