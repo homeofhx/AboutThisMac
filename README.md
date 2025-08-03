@@ -4,7 +4,7 @@ A simple AppleScript that provides a convenient way to view key details about th
 
 ## What This AppleScript Can Get
 
-As for Revision 2, this AppleScript can get the following information about the Mac:
+As for Revision 3, this AppleScript can get the following information about the Mac:
 
 |Information|Minimum Software/Hardware Requirement*|
 |-|-|
@@ -17,12 +17,15 @@ As for Revision 2, this AppleScript can get the following information about the 
 |Memory manufacturer(s)||
 |Internal storage capacity|Mac OS 10.13 or higher|
 |Attached GPUs||
-|Wi-Fi adapter' IEEE 802.11 standard (e.g. "802.11ax")|Mac OS 10.9 or higher|
 |Battery's health condition (text representation, e.g. "Normal" "Service Recommended")||
 |Battery's health percentage|ARM Macs only|
 |Battery charge cycles|Mac OS 10.9 or higher|
+|Battery's designed/current capacity|Current capacity requires ARM Macs|
 |Current charging wattage||
 |Connected charger's manufacturer & name||
+|Current connected network's type||
+|Connected Wi-Fi's channel||
+|Connected Wi-Fi's country code||
 |DEP/MDM enrollment status|Mac OS 10.13 or higher|
 |Number of installed profiles||
 
