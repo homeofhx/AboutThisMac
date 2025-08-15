@@ -4,7 +4,7 @@ A simple AppleScript that provides a convenient way to view key details about th
 
 ## What This AppleScript Can Get
 
-As for Revision 3, this AppleScript can get the following information about the Mac:
+As for Revision 4, this AppleScript can get the following information about the Mac:
 
 |Information|Minimum Software/Hardware Requirement*|
 |-|-|
@@ -17,6 +17,7 @@ As for Revision 3, this AppleScript can get the following information about the 
 |Memory manufacturer(s)||
 |Internal storage capacity|Mac OS 10.13 or higher|
 |Attached GPUs||
+|Total number of GPU cores|ARM Macs only|
 |Battery's health condition (text representation, e.g. "Normal" "Service Recommended")||
 |Battery's health percentage|ARM Macs only|
 |Battery charge cycles|Mac OS 10.9 or higher|
@@ -26,6 +27,7 @@ As for Revision 3, this AppleScript can get the following information about the 
 |Current connected network's type||
 |Connected Wi-Fi's channel||
 |Connected Wi-Fi's country code||
+|iCloud activation lock status|Mac OS 10.15 or higher|
 |DEP/MDM enrollment status|Mac OS 10.13 or higher|
 |Number of installed profiles||
 
@@ -33,7 +35,7 @@ As for Revision 3, this AppleScript can get the following information about the 
 
 ## How To Use
 
-1. Download `AboutThisMac.scpt` and open it in (Apple)Script Editor by double-click it;
+1. Download `AboutThisMac.applescript` and open it in (Apple)Script Editor by double-click it;
 
 	- if it's opened in other editors, manually open it in (Apple)Script Editor.
 
